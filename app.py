@@ -105,7 +105,7 @@ gr.Interface(
         ),
         gr.Checkbox(
             label="Agree",
-            value=True,
+            value=False,
             info="I agree to the terms of the Coqui Public Model License at https://coqui.ai/cpml",
         ),
     ],
