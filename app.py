@@ -1,7 +1,8 @@
 import gradio as gr
 from TTS.api import TTS
 
-tts = TTS("tts_models/multilingual/multi-dataset/xtts_v1", gpu=True)
+tts = TTS("tts_models/multilingual/multi-dataset/xtts_v1")
+tts.to("cuda")
 
 
 def predict(prompt, language, audio_file_pth):
@@ -17,7 +18,7 @@ def predict(prompt, language, audio_file_pth):
     )
 
 
-title = "XTTS: MVP"
+title = "Coqui🐸 XTTS"
 
 gr.Interface(
     fn=predict,
@@ -46,11 +47,13 @@ gr.Interface(
                 "zh",
             ],
             max_choices=1,
+            value="en"
         ),
         gr.Audio(
             label="Reference Audio",
             info="Upload a reference audio for target speaker voice",
             type="filepath",
+            value="examples/en_speaker_6.wav"
         ),
     ],
     outputs=[
