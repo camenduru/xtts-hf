@@ -14,8 +14,11 @@ def predict(prompt, language, audio_file_pth, agree):
             language=language,
         )
 
-        return gr.make_waveform(
-            audio="output.wav",
+        return (
+            gr.make_waveform(
+                audio="output.wav",
+            ),
+            "output.wav",
         )
     else:
         gr.Warning("Please accept the Terms & Condition!")
@@ -49,19 +52,19 @@ examples = [
         "Once when I was six years old I saw a magnificent picture.",
         "en",
         "examples/female.wav",
-        True
+        True,
     ],
     [
         "Lorsque j'avais six ans j'ai vu, une fois, une magnifique image.",
         "fr",
         "examples/male.wav",
-        True
+        True,
     ],
     [
         "Un tempo lontano, quando avevo sei anni, vidi un magnifico disegno.",
         "it",
         "examples/female.wav",
-        True
+        True,
     ],
 ]
 
@@ -98,12 +101,17 @@ gr.Interface(
             label="Reference Audio",
             info="Click on the ✎ button to upload your own target speaker audio",
             type="filepath",
-            value="examples/male.wav",
+            value="examples/female.wav",
         ),
-        gr.Checkbox(label="Agree", value=True, info="I agree to the terms of the Coqui Public Model License at https://coqui.ai/cpml")
+        gr.Checkbox(
+            label="Agree",
+            value=True,
+            info="I agree to the terms of the Coqui Public Model License at https://coqui.ai/cpml",
+        ),
     ],
     outputs=[
         gr.Video(label="Synthesised Waveform"),
+        gr.Aideo(label="Synthesised Audio"),
     ],
     title=title,
     description=description,
