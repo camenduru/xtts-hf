@@ -6,16 +6,19 @@ tts.to("cuda")
 
 
 def predict(prompt, language, audio_file_pth, agree):
-    tts.tts_to_file(
-        text=prompt,
-        file_path="output.wav",
-        speaker_wav=audio_file_pth,
-        language=language,
-    )
+    if agree == True:
+        tts.tts_to_file(
+            text=prompt,
+            file_path="output.wav",
+            speaker_wav=audio_file_pth,
+            language=language,
+        )
 
-    return gr.make_waveform(
-        audio="output.wav",
-    ), gr.Audio(value="output.wav")
+        return gr.make_waveform(
+            audio="output.wav",
+        ), gr.Audio(value="output.wav")
+    else:
+        gr.Warning("Please accept the Terms & Condition!")
 
 
 title = "Coqui🐸 XTTS"
