@@ -42,21 +42,21 @@ article = """
 """
 
 examples = [
-    [
-        "Once when I was six years old I saw a magnificent picture.",
-        "en",
-        "examples/female.wav",
-    ],
+    # [
+    #     "Once when I was six years old I saw a magnificent picture.",
+    #     "en",
+    #     "examples/female.wav",
+    # ],
     [
         "Lorsque j'avais six ans j'ai vu, une fois, une magnifique image.",
         "fr",
         "examples/male.wav",
     ],
-    [
-        "Un tempo lontano, quando avevo sei anni, vidi un magnifico disegno.",
-        "it",
-        "examples/female.wav",
-    ],
+    # [
+    #     "Un tempo lontano, quando avevo sei anni, vidi un magnifico disegno.",
+    #     "it",
+    #     "examples/female.wav",
+    # ],
 ]
 
 gr.Interface(
@@ -92,7 +92,7 @@ gr.Interface(
             label="Reference Audio",
             info="Click on the ✎ button to upload your own target speaker audio",
             type="filepath",
-            value="examples/female.wav",
+            value="examples/male.wav",
         ),
         gr.Checkbox(label="Agree", value=True, info="I agree to the terms of the Coqui Public Model License at https://coqui.ai/cpml")
     ],
@@ -103,5 +103,5 @@ gr.Interface(
     title=title,
     description=description,
     article=article,
-    # examples=examples,
+    examples=examples,
 ).queue().launch(debug=True)
