@@ -65,7 +65,7 @@ gr.Interface(
         gr.Textbox(
             label="Text Prompt",
             info="One or two sentences at a time is better",
-            placeholder="It took me quite a long time to develop a voice, and now that I have it I'm not going to be silent.",
+            value="It took me quite a long time to develop a voice, and now that I have it I'm not going to be silent.",
         ),
         gr.Dropdown(
             label="Language",
@@ -92,7 +92,7 @@ gr.Interface(
             label="Reference Audio",
             info="Click on the ✎ button to upload your own target speaker audio",
             type="filepath",
-            value="examples/en_speaker_6.wav",
+            value="examples/female.wav",
         ),
     ],
     outputs=[
