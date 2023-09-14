@@ -1,6 +1,6 @@
 ---
-title: Xtts
-emoji: 🐠
+title: XTTS
+emoji: 🐸
 colorFrom: green
 colorTo: red
 sdk: gradio
