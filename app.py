@@ -5,7 +5,7 @@ tts = TTS("tts_models/multilingual/multi-dataset/xtts_v1")
 tts.to("cuda")
 
 
-def predict(prompt, language, audio_file_pth):
+def predict(prompt, language, audio_file_pth, agree):
     tts.tts_to_file(
         text=prompt,
         file_path="output.wav",
@@ -94,6 +94,7 @@ gr.Interface(
             type="filepath",
             value="examples/female.wav",
         ),
+        gr.Checkbox(label="Agree", value=True, info="I agree to the terms of the Coqui Public Model License at https://coqui.ai/cpml")
     ],
     outputs=[
         gr.Video(label="Synthesised Waveform"),
@@ -102,5 +103,5 @@ gr.Interface(
     title=title,
     description=description,
     article=article,
-    examples=examples,
+    # examples=examples,
 ).queue().launch(debug=True)
