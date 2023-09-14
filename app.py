@@ -63,7 +63,7 @@ gr.Interface(
         ),
         gr.Audio(
             label="Reference Audio",
-            info="Upload a reference audio for target speaker voice",
+            info="Click on the ✎ button to upload your own target speaker audio",
             type="filepath",
             value="examples/en_speaker_6.wav"
         ),
