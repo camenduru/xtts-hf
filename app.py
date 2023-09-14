@@ -36,8 +36,6 @@ This is the same model that powers Coqui Studio, and Coqui API, however we apply
 <br/>
 <p>For faster inference without waiting in the queue, you should duplicate this space and upgrade to GPU via the settings.
 <br/>
-<a href="https://huggingface.co/spaces/coqui/xtts?duplicate=true">
-<img style="margin-top: 0em; margin-bottom: 0em" src="https://bit.ly/3gLdBN6" alt="Duplicate Space"></a>
 </p>
 """
 
