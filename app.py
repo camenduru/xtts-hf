@@ -16,7 +16,7 @@ def predict(prompt, language, audio_file_pth, agree):
 
         return gr.make_waveform(
             audio="output.wav",
-        ), gr.Audio(value="output.wav")
+        )
     else:
         gr.Warning("Please accept the Terms & Condition!")
 
@@ -45,24 +45,24 @@ article = """
 """
 
 examples = [
-    # [
-    #     "Once when I was six years old I saw a magnificent picture.",
-    #     "en",
-    #     "examples/female.wav",
-    #     True
-    # ],
+    [
+        "Once when I was six years old I saw a magnificent picture.",
+        "en",
+        "examples/female.wav",
+        True
+    ],
     [
         "Lorsque j'avais six ans j'ai vu, une fois, une magnifique image.",
         "fr",
         "examples/male.wav",
         True
     ],
-    # [
-    #     "Un tempo lontano, quando avevo sei anni, vidi un magnifico disegno.",
-    #     "it",
-    #     "examples/female.wav",
-    #     True
-    # ],
+    [
+        "Un tempo lontano, quando avevo sei anni, vidi un magnifico disegno.",
+        "it",
+        "examples/female.wav",
+        True
+    ],
 ]
 
 gr.Interface(
@@ -104,7 +104,6 @@ gr.Interface(
     ],
     outputs=[
         gr.Video(label="Synthesised Waveform"),
-        gr.Audio(label="Synthesised Audio"),
     ],
     title=title,
     description=description,
