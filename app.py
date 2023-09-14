@@ -15,7 +15,7 @@ def predict(prompt, language, audio_file_pth):
 
     return gr.make_waveform(
         audio="output.wav",
-    ), gr.Audio(audio="output.wav")
+    ), gr.Audio(value="output.wav")
 
 
 title = "Coqui🐸 XTTS"
@@ -40,6 +40,24 @@ article = """
 <p>By using this demo you agree to the terms of the Coqui Public Model License at https://coqui.ai/cpml</p>
 </div>
 """
+
+examples = [
+    [
+        "Once when I was six years old I saw a magnificent picture.",
+        "en",
+        "examples/female.wav",
+    ],
+    [
+        "Lorsque j'avais six ans j'ai vu, une fois, une magnifique image.",
+        "fr",
+        "examples/male.wav",
+    ],
+    [
+        "Un tempo lontano, quando avevo sei anni, vidi un magnifico disegno.",
+        "it",
+        "examples/female.wav",
+    ],
+]
 
 gr.Interface(
     fn=predict,
@@ -68,20 +86,21 @@ gr.Interface(
                 "zh",
             ],
             max_choices=1,
-            value="en"
+            value="en",
         ),
         gr.Audio(
             label="Reference Audio",
             info="Click on the ✎ button to upload your own target speaker audio",
             type="filepath",
-            value="examples/en_speaker_6.wav"
+            value="examples/en_speaker_6.wav",
         ),
     ],
     outputs=[
         gr.Video(label="Synthesised Waveform"),
-        gr.Audio(label="Synthesised Audio")
+        gr.Audio(label="Synthesised Audio"),
     ],
     title=title,
     description=description,
     article=article,
+    examples=examples,
 ).launch(debug=True)
