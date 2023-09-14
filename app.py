@@ -72,4 +72,5 @@ gr.Interface(
         gr.Video(label="Synthesised Speech"),
     ],
     title=title,
+    description=description,
 ).launch(debug=True)
