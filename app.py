@@ -32,6 +32,12 @@ Built on Tortoise, XTTS has important model changes that make cross-language voi
 This is the same model that powers Coqui Studio, and Coqui API, however we apply a few tricks to make it faster and support streaming inference.
 """
 
+article = """
+<div style='margin:20px auto;'>
+<p>By using this demo you agree to the terms of the Coqui Public Model License at https://coqui.ai/cpml</p>
+</div>
+"""
+
 gr.Interface(
     fn=predict,
     inputs=[
@@ -73,4 +79,5 @@ gr.Interface(
     ],
     title=title,
     description=description,
+    article=article,
 ).launch(debug=True)
