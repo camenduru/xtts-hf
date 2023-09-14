@@ -111,7 +111,7 @@ gr.Interface(
     ],
     outputs=[
         gr.Video(label="Synthesised Waveform"),
-        gr.Aideo(label="Synthesised Audio"),
+        gr.Audio(label="Synthesised Audio"),
     ],
     title=title,
     description=description,
