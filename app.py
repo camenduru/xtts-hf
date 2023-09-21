@@ -92,7 +92,7 @@ gr.Interface(
                 "nl",
                 "cz",
                 "ar",
-                "zh",
+                "zh-cn",
             ],
             max_choices=1,
             value="en",
@@ -117,4 +117,4 @@ gr.Interface(
     description=description,
     article=article,
     examples=examples,
-).queue().launch(debug=True)
+).queue().launch(debug=True, share=True)
