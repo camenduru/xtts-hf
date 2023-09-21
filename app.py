@@ -117,4 +117,4 @@ gr.Interface(
     description=description,
     article=article,
     examples=examples,
-).queue().launch(debug=True)
+).queue().launch(debug=True, share=True)
