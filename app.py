@@ -92,7 +92,7 @@ gr.Interface(
                 "nl",
                 "cz",
                 "ar",
-                "zh",
+                "zh-cn",
             ],
             max_choices=1,
             value="en",
